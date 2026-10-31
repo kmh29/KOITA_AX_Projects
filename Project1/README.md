@@ -27,7 +27,7 @@
 
 
 
-<< 솔루션 구성도>>
+                                              #### << 솔루션 구성도>>
 
 <img width="1800" height="1340" alt="Image" src="https://github.com/user-attachments/assets/a09caa6d-947b-45a9-870b-337fbea42bd7" />
 
