@@ -1,16 +1,10 @@
 """정부사업 리마인더 — DB 및 로그 저장 없는 MVP 버전.
 실행할 때마다 schedule.xlsx의 알림 대상 일정을 발송하고 종료합니다.
 중복 발송 방지가 없으므로 같은 날 재실행하면 같은 메일이 다시 발송됩니다.
-콘솔 print 출력만 유지하며 로그 파일이나 DB는 생성하지 않습니다.
 """
 
 
-"""정부사업 리마인더 — DB 및 로그 저장 없는 MVP 버전.
-실행할 때마다 schedule.xlsx의 알림 대상 일정을 발송하고 종료합니다.
-중복 발송 방지가 없으므로 같은 날 재실행하면 같은 메일이 다시 발송됩니다.
-콘솔 print 출력만 유지하며 로그 파일이나 DB는 생성하지 않습니다.
-"""
-
+# 필요한 패키지 및 라이브러리 호출, 솔루션 실행 전 일부 라이브러리는 설치가 필요함
 
 import os
 import smtplib
@@ -22,7 +16,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from openai import OpenAI
 
-# .py에서는 파일 폴더, 주피터에 붙여 넣으면 현재 작업 폴더 기준
+# 작업 디렉터리 설정 및 .env 파일 내의 정보 호출
 BASE_DIR = Path(__file__).resolve().parent if "__file__" in globals() else Path.cwd()
 load_dotenv(BASE_DIR / "reminder_info.env", override=True)
 
@@ -38,7 +32,7 @@ client = OpenAI(api_key=OPENAI_API_KEY)
 
 
 
-# 1. GPT 메일 생성 (기존 방식 유지)
+# 1. GPT를 활용한 메일 생성
 def generate_email(event, days_left):
     event_date = event["기준일"].strftime("%Y년 %m월 %d일")
     prompt = f"""
@@ -76,7 +70,7 @@ def generate_email(event, days_left):
 
     text = response.output_text.strip()
 
-    # 아주 단순한 제목/본문 분리
+    # 제목 및 본문 분리
     if "본문:" in text:
         subject_part, body = text.split("본문:", 1)
         subject = subject_part.replace("제목:", "").strip()
@@ -87,7 +81,7 @@ def generate_email(event, days_left):
     return subject, body.strip()
 
 
-# 2. Gmail 발송
+# 2. Gmail 발송(발신자는 GMAIL이며, 수신자는 액셀파일 내에 등록된 수신자 명단으로 발송)
 def send_email(recipient, subject, body):
 
     message = MIMEMultipart()
