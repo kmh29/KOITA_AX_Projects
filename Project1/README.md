@@ -272,9 +272,9 @@ EVENT_001: D-1 전송 완료 → myname@company.example
 ❗실제 파일명을 바꿨다면 인수도 변경이 필요하며, 시작 위치에는 파일명이나 따옴표를 넣지 않습니다.
 
 
+### 실제 메일수신 화면
 
-
-
+<img width="1043" height="733" alt="Image" src="https://github.com/user-attachments/assets/2c834ffa-b896-4fe7-9359-0a83d8b3041b" />
 
 
 ### 트리거와 실행 조건
