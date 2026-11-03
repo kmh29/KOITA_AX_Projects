@@ -29,7 +29,7 @@
 
 ##### << 솔루션 구성도>>
 
-<img width="1800" height="1340" alt="Image" src="https://github.com/user-attachments/assets/a09caa6d-947b-45a9-870b-337fbea42bd7" />
+<img width="1800" height="1340" alt="Image" src="https://github.com/user-attachments/assets/010260a3-0a67-469b-bd02-95c76ec92a42" />
 
 
 
