@@ -54,9 +54,9 @@ DB, 발송 이력 저장, 중복 발송 방지, 파일 로그 저장, 자동 재
 
 
 
-### 3\. 실행 흐름
+### 3. 실행 흐름
 
-1. `reminder\\\_info.env`에서 인증정보와 모델 설정을 읽습니다.
+1. `reminder_info.env`에서 인증정보와 모델 설정을 읽습니다.
 2. 엑셀 일정을 읽고 PC의 현재 날짜와 기준일을 비교합니다.
 3. 활성화·D-day 조건을 만족하는 행의 메일을 생성합니다.
 4. Gmail을 이용해 엑셀에 지정된 수신자에게 전송합니다.
@@ -76,14 +76,14 @@ DB, 발송 이력 저장, 중복 발송 방지, 파일 로그 저장, 자동 재
 |-|-|
 |`reminder.py`|실행 프로그램|
 |`schedule.xlsx`|사용자가 준비하는 일정 파일|
-|`reminder\\\_info.env`|사용자가 준비하는 인증정보 파일|
+|`reminder_info.env`|사용자가 준비하는 인증정보 파일|
 |||
 
 .
 
 * reminder.py :  ChatGPT API 및 Python 프레임워크를 호출하여 메일을 발송하도록 구성된 파이썬 코드
 * Schedule: 정부사업 일정 및 주요 내용, 참고사항, 수신자 명이 기록된 액셀 파일
-* reminder\_info.env: ChatGPT API Key, GMAIL 주소 및 App 비밀번호가 기록된 .env파일
+* reminder_info.env: ChatGPT API Key, GMAIL 주소 및 App 비밀번호가 기록된 .env파일
 
 ❗(유의) **상기 정보들은 개인정보·민감정보이기 때문에 파이썬 코드에 직접 기록하지 않고, 작업 디렉터리 내에 env 파일을 생성하여 호출하는 것이 좋습니다. 그리고 비밀번호는 구글계정 로그인 할 때 입력하는 실제 비밀번호가 아닌 App Password 8자리를 사용해야 합니다.**
 
@@ -219,7 +219,7 @@ print(sys.executable)
 
 
 
-"C:\\실제Python경로\\python.exe" -m pip install pandas openpyxl python-dotenv openai
+"C:\실제Python경로\python.exe" -m pip install pandas openpyxl python-dotenv openai
 
 
 
