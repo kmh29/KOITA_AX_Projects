@@ -266,7 +266,7 @@ EVENT_001: D-1 전송 완료 → myname@company.example
 
 
 * 프로그램/스크립트: "C:\실제Python경로\python.exe"
-* 인수추가: "C:\실제프로젝트경로\reminder\_no\_db.py"
+* 인수추가: "C:\실제프로젝트경로\reminder.py"
 * 시작위치: C:\실제프로젝트경로
 
 ❗실제 파일명을 바꿨다면 인수도 변경이 필요하며, 시작 위치에는 파일명이나 따옴표를 넣지 않습니다.
