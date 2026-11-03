@@ -115,7 +115,7 @@ DB, 발송 이력 저장, 중복 발송 방지, 파일 로그 저장, 자동 재
 
 |열 이름|입력 예시|설명|
 |-|-|-|
-|`event\\\\\\\_id`|`EVENT\\\\\\\_001`|일정 구분용 ID. 현재는 화면 출력에 사용|
+|`event_id`|`EVENT_001`|일정 구분용 ID. 현재는 화면 출력에 사용|
 |`사업명`|테스트 R\&D 사업|안내할 사업명|
 |`일정유형`|자료 제출|일정의 분류|
 |`일정명`|진행현황 제출|구체적인 일정명|
@@ -140,12 +140,12 @@ DB, 발송 이력 저장, 중복 발송 방지, 파일 로그 저장, 자동 재
 
 
 
-OPENAI\_API\_KEY=본인의 OPENAI API 키
-OPENAI\_MODEL= 사용가능한 OPENAI AI 모델 (예:     OPENAI\_MODEL='gpt-6-luna'    )
+OPENAI_API_KEY=본인의 OPENAI API 키
+OPENAI_MODEL= 사용가능한 OPENAI AI 모델 (예:     OPENAI_MODEL='gpt-6-luna'    )
 
-GMAIL\_ADDRESS= 본인의 지메일주소 입력
+GMAIL_ADDRESS= 본인의 지메일주소 입력
 
-GMAIL\_APP\_PASSWORD=발급받은 GMAIL 앱 비밀번호 입력
+GMAIL_APP_PASSWORD=발급받은 GMAIL 앱 비밀번호 입력
 
 
 
@@ -166,7 +166,7 @@ GMAIL\_APP\_PASSWORD=발급받은 GMAIL 앱 비밀번호 입력
 
 
 
-### 5\. 설치 및 환경설정
+### 5. 설치 및 환경설정
 
 #### 5.1 실행할 Python 확인
 
@@ -235,17 +235,17 @@ print(sys.executable)
 4. cmd에서 실행합니다.
 
 ```bat
-"C:\\\\실제Python경로\\\\python.exe" "C:\\\\실제프로젝트경로\\\\reminder\\\_no\\\_db.py"
+"C:\실제Python경로\python.exe" "C:\실제프로젝트경로\reminder.py"
 ```
 
 출력 예시:
 
 ```text
 일정 확인 시작: 2026-10-31
-엑셀 파일: C:\\\\실제프로젝트경로\\\\schedule.xlsx
+엑셀 파일: C:\실제프로젝트경로\schedule.xlsx
 전체 일정: 1건
-EVENT\\\_001: D-1 메일 생성 중
-EVENT\\\_001: D-1 전송 완료 → myname@company.example
+EVENT_001: D-1 메일 생성 중
+EVENT_001: D-1 전송 완료 → myname@company.example
 일정 확인 완료: 전송 1건 / 오류 0건 / 제외 0건
 ```
 
@@ -257,7 +257,7 @@ EVENT\\\_001: D-1 전송 완료 → myname@company.example
 
 
 
-### 7\. Windows 작업 스케줄러 등록
+### 7. Windows 작업 스케줄러 등록
 
 
 
@@ -265,9 +265,9 @@ EVENT\\\_001: D-1 전송 완료 → myname@company.example
 
 
 
-* 프로그램/스크립트: "C:\\실제Python경로\\python.exe"
-* 인수추가: "C:\\실제프로젝트경로\\reminder\_no\_db.py"
-* 시작위치: C:\\\\실제프로젝트경로
+* 프로그램/스크립트: "C:\실제Python경로\python.exe"
+* 인수추가: "C:\실제프로젝트경로\reminder\_no\_db.py"
+* 시작위치: C:\실제프로젝트경로
 
 ❗실제 파일명을 바꿨다면 인수도 변경이 필요하며, 시작 위치에는 파일명이나 따옴표를 넣지 않습니다.
 
@@ -291,7 +291,7 @@ EVENT\\\_001: D-1 전송 완료 → myname@company.example
 
 
 
-### 8\. 향후 개선 계획
+### 8. 향후 개선 계획
 
 * DB연계를 통한 발송 이력 저장
 * 스케줄러 대신 Google AppScript 등을 활용한 개선방안 적용 → **스케줄러는 컴퓨터가 꺼져있으면 동작하지 않음.**
